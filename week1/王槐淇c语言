@@ -1,0 +1,36 @@
+
+#include <stdio.h>
+
+int main()
+{
+	int a, b, c, type;
+	scanf_s("%d %d %d", &a, &b, &c);
+	type = (a + b > c && a + c > b && b + c > a)
+		? (a == b && b == c && b == c ? 3
+			: (a == b || b == c || a == c ? 2 : 1))
+		: 0;
+
+	printf("%d\n", type);
+
+	return 0;
+}
+#include<stdio.h>
+
+int main()
+{
+	int a, b, c, t, angle;
+	scanf_s("%d %d %d", &a, &b, &c);
+	
+	if (a > c) { t = a;a = c;c = t; }
+	if (b > c) { t = b;b = c;c = t; }
+	
+	if (a + b <= c)
+		return 0;
+
+	angle = c * c == a * a + b * b ? 1
+		: (c * c < a * a + b * b ? 0 : 2);
+
+	printf("%d\n", angle);
+
+	return 0;
+}
